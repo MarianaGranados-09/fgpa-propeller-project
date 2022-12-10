@@ -156,7 +156,7 @@ begin
 				
 			when others	=> 
 				Tx_s <= '1';
-				if (BT1 = '0') then
+				if (BT2 = '0') then
 					Qn <= (others => '0');
 				else
 					Qn <= Qp;
@@ -221,7 +221,7 @@ begin
 				
 			when others	=> 
 				Tx_s <= '1';
-				if (BT1 = '0') then
+				if (BT3 = '0') then
 					Qn <= (others => '0');
 				else
 					Qn <= Qp;
