@@ -104,7 +104,7 @@ begin
 		case Qp is
 			when "000000"	=> 
 				Tx_s <= '1';
-				if(BT1 = '1') then
+				if(BT2 = '1') then
 					Qn <= "000001";
 				else
 					Qn <= Qp;
@@ -169,7 +169,7 @@ begin
 		case Qp is
 			when "000000"	=> 
 				Tx_s <= '1';
-				if(BT1 = '1') then
+				if(BT3 = '1') then
 					Qn <= "000001";
 				else
 					Qn <= Qp;
