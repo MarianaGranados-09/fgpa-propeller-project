@@ -62,21 +62,21 @@ void main()
          //mensaje de switch 1: Hola
          fprintf(TTL, "[1] La palabra que se mostrara en el propeller es Hola \r\n"); 
          delay_ms(50);
-         ImprimirHola();
+         //ImprimirHola();
       }
       else if(option == '2')
       {
          //mensaje de switch 2: Mundo
          fprintf(TTL, "[2] La palabra que se mostrara en el propeller es Mundo \r\n");
          delay_ms(50);
-         ImprimirMundo();
+         //ImprimirMundo();
       }
       else if(option == '3')
       {
          //mensaje de switch 3: Digit
          fprintf(TTL, "[3] La palabra que se mostrara en el propeller es Digit \r\n");
          delay_ms(50);
-         ImprimirDigit();
+         //ImprimirDigit();
       }
   
     }
@@ -181,3 +181,5 @@ void ImprimirDigit()
         delay_ms(Tiempo);
       }
 }
+   
+
