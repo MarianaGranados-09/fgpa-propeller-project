@@ -57,24 +57,38 @@ void main()
       
       option = fgetc(BTH);
       
-      if(option == '1')
+      if(option == 'A')
       {
          //mensaje de switch 1: Hola
-         fprintf(TTL, "[1] La palabra que se mostrara en el propeller es Hola \r\n"); 
+         fprintf(TTL, "[A] La palabra que se mostrara en el propeller es COM \r\n"); 
          delay_ms(50);
          //ImprimirHola();
       }
-      else if(option == '2')
+      else if(option == 'B')
       {
          //mensaje de switch 2: Mundo
-         fprintf(TTL, "[2] La palabra que se mostrara en el propeller es Mundo \r\n");
+         fprintf(TTL, "[B] La palabra que se mostrara en el propeller es SERIAL \r\n");
          delay_ms(50);
          //ImprimirMundo();
       }
-      else if(option == '3')
+      else if(option == 'C')
       {
          //mensaje de switch 3: Digit
-         fprintf(TTL, "[3] La palabra que se mostrara en el propeller es Digit \r\n");
+         fprintf(TTL, "[C] La palabra que se mostrara en el propeller es MGXVC \r\n");
+         delay_ms(50);
+         //ImprimirDigit();
+      }
+      else if(option == 'D')
+      {
+         //mensaje de switch 3: Digit
+         fprintf(TTL, "[D] INICIO MOTOR \r\n");
+         delay_ms(50);
+         //ImprimirDigit();
+      }
+      else if(option == 'E')
+      {
+         //mensaje de switch 3: Digit
+         fprintf(TTL, "[E] PARO MOTOR \r\n");
          delay_ms(50);
          //ImprimirDigit();
       }
