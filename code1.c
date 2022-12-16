@@ -75,7 +75,7 @@ void main()
       else if(option == 'C')
       {
          //mensaje de switch 3: Digit
-         fprintf(TTL, "[C] La palabra que se mostrara en el propeller es MGXVC \r\n");
+         fprintf(TTL, "[C] La palabra que se mostrara en el propeller es MGXMV \r\n");
          delay_ms(50);
          ImprimirC();
       }
