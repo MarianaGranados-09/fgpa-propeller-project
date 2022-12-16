@@ -2,7 +2,7 @@
 #fuses INTRC, NOPROTECT, NOWDT, NOLVP, CPUDIV1, PLL1        
 #use delay (clock = 8M)
 
-#use rs232(rcv=pin_C7, xmit=pin_C6, baud=9600, bits=8, parity=n, stream = BTH)
+#use rs232(rcv=pin_B7, xmit=pin_B6, baud=9600, bits=8, parity=n, stream = BTH)
 #use rs232(rcv=pin_B5, xmit=pin_B4, baud=9600, bits=8, parity=n, stream = TTL)
 
 #BYTE TRISD = 0xF95
@@ -43,9 +43,10 @@ Int Letra_X[7]={0B11000111, 0B00101000, 0B00010000, 0B00101000, 0B11000111, 0B00
 Int Letra_Y[7]={0B11000000, 0B00100000, 0B00011111, 0B00100000, 0B11000000, 0B00000000, 0B00000000};
 Int Letra_Z[7]={0B11000111, 0B10001001, 0B10010001, 0B10100001, 0B11000011, 0B00000000, 0B00000000};
 
-void ImprimirHola();
-void ImprimirMundo();
-void ImprimirDigit();
+void ImprimirA();
+void ImprimirB();
+void ImprimirC();
+void Margin();
 
 
 void main()
@@ -62,21 +63,21 @@ void main()
          //mensaje de switch 1: Hola
          fprintf(TTL, "[A] La palabra que se mostrara en el propeller es COM \r\n"); 
          delay_ms(50);
-         //ImprimirHola();
+         ImprimirA();
       }
       else if(option == 'B')
       {
          //mensaje de switch 2: Mundo
          fprintf(TTL, "[B] La palabra que se mostrara en el propeller es SERIAL \r\n");
          delay_ms(50);
-         //ImprimirMundo();
+         ImprimirB();
       }
       else if(option == 'C')
       {
          //mensaje de switch 3: Digit
          fprintf(TTL, "[C] La palabra que se mostrara en el propeller es MGXVC \r\n");
          delay_ms(50);
-         //ImprimirDigit();
+         ImprimirC();
       }
       else if(option == 'D')
       {
@@ -98,12 +99,20 @@ void main()
    
    }
    
-void ImprimirHola()
+   
+void Margin(){
+   output_high(pin_C7);
+   output_high(pin_C6);
+}
+   
+void ImprimirA()
 {
-   //impresion de H
+    //margen
+    Margin();
+   //impresion de C
    for(j=0;j<7;j++)
       {
-         PORTD = Letra_H[j];
+         PORTD = Letra_C[j];
          delay_ms(Tiempo);
       }
    //impresion de O
@@ -112,10 +121,40 @@ void ImprimirHola()
         PORTD = Letra_O[j];
         delay_ms(Tiempo);
       }
-   //impresion de L
+   //impresion de M
    for(j=0;j<7;j++)
       {
-        PORTD = Letra_L[j];
+        PORTD = Letra_M[j];
+        delay_ms(Tiempo);
+      }
+}
+
+void ImprimirB()
+{
+   //margen
+   Margin();
+   //impresion de S
+    for(j=0;j<7;j++)
+      {
+        PORTD = Letra_S[j];
+        delay_ms(Tiempo);
+      }
+    //impresion de E
+    for(j=0;j<7;j++)
+      {
+        PORTD = Letra_E[j];
+        delay_ms(Tiempo);
+      }
+    //impresion de R
+    for(j=0;j<7;j++)
+      {
+        PORTD = Letra_R[j];
+        delay_ms(Tiempo);
+      }
+    //impresion de I
+    for(j=0;j<7;j++)
+      {
+        PORTD = Letra_I[j];
         delay_ms(Tiempo);
       }
     //impresion de A
@@ -124,56 +163,23 @@ void ImprimirHola()
         PORTD = Letra_A[j];
         delay_ms(Tiempo);
       }
+     //impresion de L
+    for(j=0;j<7;j++)
+      {
+        PORTD = Letra_L[j];
+        delay_ms(Tiempo);
+      }
 
 }
 
-void ImprimirMundo()
+void ImprimirC()
 {
+   //margen
+   Margin();
    //impresion de M
     for(j=0;j<7;j++)
       {
         PORTD = Letra_M[j];
-        delay_ms(Tiempo);
-      }
-    //impresion de U
-    for(j=0;j<7;j++)
-      {
-        PORTD = Letra_U[j];
-        delay_ms(Tiempo);
-      }
-    //impresion de N
-    for(j=0;j<7;j++)
-      {
-        PORTD = Letra_N[j];
-        delay_ms(Tiempo);
-      }
-    //impresion de D
-    for(j=0;j<7;j++)
-      {
-        PORTD = Letra_D[j];
-        delay_ms(Tiempo);
-      }
-    //impresion de O
-    for(j=0;j<7;j++)
-      {
-        PORTD = Letra_O[j];
-        delay_ms(Tiempo);
-      }
-
-}
-
-void ImprimirDigit()
-{
-   //impresion de D
-    for(j=0;j<7;j++)
-      {
-        PORTD = Letra_D[j];
-        delay_ms(Tiempo);
-      }
-    //impresion de I
-    for(j=0;j<7;j++)
-      {
-        PORTD = Letra_I[j];
         delay_ms(Tiempo);
       }
     //impresion de G
@@ -182,18 +188,22 @@ void ImprimirDigit()
         PORTD = Letra_G[j];
         delay_ms(Tiempo);
       }
-    //impresion de I
+    //impresion de X
     for(j=0;j<7;j++)
       {
-        PORTD = Letra_I[j];
+        PORTD = Letra_X[j];
         delay_ms(Tiempo);
       }
-    //impresion de T
+    //impresion de M
     for(j=0;j<7;j++)
       {
-        PORTD = Letra_T[j];
+        PORTD = Letra_M[j];
+        delay_ms(Tiempo);
+      }
+    //impresion de V
+    for(j=0;j<7;j++)
+      {
+        PORTD = Letra_V[j];
         delay_ms(Tiempo);
       }
 }
-   
-
