@@ -47,6 +47,7 @@ void ImprimirA();
 void ImprimirB();
 void ImprimirC();
 void Margin();
+void Apagar();
 
 
 void main()
@@ -90,6 +91,7 @@ void main()
       {
          //mensaje de switch 3: Digit
          fprintf(TTL, "[E] PARO MOTOR \r\n");
+         Apagar();
          delay_ms(50);
          //ImprimirDigit();
       }
@@ -103,6 +105,11 @@ void main()
 void Margin(){
    output_high(pin_C7);
    output_high(pin_C6);
+}
+void Apagar(){
+   PORTD = 0;
+   output_low(pin_c6);
+   output_low(pin_c7);
 }
    
 void ImprimirA()
