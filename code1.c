@@ -1,5 +1,5 @@
 #include <18F4550.h>
-#fuses INTRC, NOPROTECT, NOWDT, NOLVP, CPUDIV1, PLL1        
+#fuses HS, NOPROTECT, NOWDT, NOLVP, CPUDIV1, PLL1        
 #use delay (clock = 8M)
 
 #use rs232(rcv=pin_B7, xmit=pin_B6, baud=9600, bits=8, parity=n, stream = BTH)
