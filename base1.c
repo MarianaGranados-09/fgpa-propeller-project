@@ -1,3 +1,4 @@
+//Code working perfect.
 #Include <18F4550.h>
 #Fuses INTRC,NOPROTECT, NOWDT, CPUDIV1, PLL1
 #Use Delay(Clock=8M)
@@ -125,13 +126,51 @@ Void main()
          delay_ms(1000);
          flag = 0;   
       }
-      //delay_ms(200);
+      else if(flag == 1 && real == 'B')
+      {
+         //Cambio de palabra aqui
+         //delay_ms(2000);
+         delay_ms(1000);
+         wordreal[0] = 'S';
+         wordreal[1] = 'E';
+         wordreal[2] = 'R';
+         wordreal[3] = 'I';
+         wordreal[4] = 'A';
+         wordreal[5] = 'L';
+         delay_ms(50);
+         limpiar_palabra();
+         fprintf(TTL, "[1] La palabra que se mostrara en el propeller es: \r\n");
+         for(int u=0;u<6;u++)
+         {
+            fprintf(TTL, "%c", wordreal[u]);
+         }
+         delay_ms(1000);
+         flag = 0;   
+      }
+      else if(flag == 1 && real == 'C')
+      {
+         //Cambio de palabra aqui
+         //delay_ms(2000);
+         delay_ms(1000);
+         wordreal[0] = 'M';
+         wordreal[1] = 'G';
+         wordreal[2] = 'X';
+         wordreal[3] = 'M';
+         wordreal[4] = 'V';
+         delay_ms(50);
+         limpiar_palabra();
+         fprintf(TTL, "[1] La palabra que se mostrara en el propeller es: \r\n");
+         for(int u=0;u<5;u++)
+         {
+            fprintf(TTL, "%c", wordreal[u]);
+         }
+         delay_ms(1000);
+         flag = 0;   
+      }
+      
       
    }
-     
-     
-     
-     
+    
      
 } //Main.
 
@@ -143,7 +182,7 @@ Void Limpiar_palabra()
 
 Void Print()
 {
-   For(i=0; i<3; i++)
+   For(i=0; i<7; i++)
    {
       carac = wordreal[i];
       Switch(carac)
