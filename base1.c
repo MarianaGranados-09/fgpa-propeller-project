@@ -1,4 +1,3 @@
-//Code working perfect.
 #Include <18F4550.h>
 #Fuses INTRC,NOPROTECT, NOWDT, CPUDIV1, PLL1
 #Use Delay(Clock=8M)
@@ -50,6 +49,8 @@ Int8 Tiempo = 2;
 
 int8 i=0, j = 0,k=0;
 char letter;
+char real;
+char carac;
 char word[100];
 char wordreal[100];
 
@@ -75,17 +76,11 @@ void isr_rda()
    //{
          limpieza();
          flag = 1;
-         for(int y=0;y<8;y++)
-         {
-            letter = fgetc(BTH);
-            limpieza();
-            output_high(pin_a1);
-            delay_us(10);
-            if(letter == '.')
-              break;
-            word[y] = letter;
-           // delay_ms(50);
-         }
+         letter = fgetc(BTH);
+         limpieza();
+         output_high(pin_a1);
+         delay_us(10);
+         real = letter;
          limpieza();
          delay_ms(50);
          output_low(pin_a1);
@@ -112,23 +107,22 @@ Void main()
       //Solo hacer el cambio de palabra en caso de que el motor este apagado y en caso de que la interrupcion haya guardado
       //una palabra nueva dentro de la variable word.
       //delay_ms(5000);
-      if(flag == 1 )
+      if(flag == 1 && real == 'A')
       {
          //Cambio de palabra aqui
          //delay_ms(2000);
-         delay_ms(10000);
-         for(int b=0;b<8;b++)
-         {
-            wordreal[b] = word[b];
-         }
+         delay_ms(1000);
+         wordreal[0] = 'C';
+         wordreal[1] = 'O';
+         wordreal[2] = 'M';
          delay_ms(50);
          limpiar_palabra();
          fprintf(TTL, "[1] La palabra que se mostrara en el propeller es: \r\n");
-         for(int u=0;u<8;u++)
+         for(int u=0;u<3;u++)
          {
             fprintf(TTL, "%c", wordreal[u]);
          }
-         delay_ms(100);
+         delay_ms(1000);
          flag = 0;   
       }
       //delay_ms(200);
@@ -143,19 +137,16 @@ Void main()
 
 Void Limpiar_palabra()
 {
-   For(K=0; K<8; K++)
-      {
-         Word[k] = 0;
-      }
+   letter = 0;
 }
 
 
 Void Print()
 {
-   For(i=0; i<8; i++)
+   For(i=0; i<3; i++)
    {
-      letter = wordreal[i];
-      Switch(letter)
+      carac = wordreal[i];
+      Switch(carac)
       {
          Case 'A': Case 'a':
          {
