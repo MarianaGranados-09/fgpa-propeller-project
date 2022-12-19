@@ -1,4 +1,3 @@
-//Code working perfect.
 #Include <18F4550.h>
 #Fuses INTRC,NOPROTECT, NOWDT, CPUDIV1, PLL1
 #Use Delay(Clock=8M)
@@ -52,6 +51,7 @@ int8 i=0, j = 0,k=0;
 char letter;
 char real;
 char carac;
+int len=0;
 char word[100];
 char wordreal[100];
 
@@ -116,6 +116,7 @@ Void main()
          wordreal[0] = 'C';
          wordreal[1] = 'O';
          wordreal[2] = 'M';
+         len = 3;
          delay_ms(50);
          limpiar_palabra();
          fprintf(TTL, "[A] La palabra que se mostrara en el propeller es: \r\n");
@@ -137,6 +138,7 @@ Void main()
          wordreal[3] = 'I';
          wordreal[4] = 'A';
          wordreal[5] = 'L';
+         len = 6;
          delay_ms(50);
          limpiar_palabra();
          fprintf(TTL, "[B] La palabra que se mostrara en el propeller es: \r\n");
@@ -157,6 +159,7 @@ Void main()
          wordreal[2] = 'X';
          wordreal[3] = 'M';
          wordreal[4] = 'V';
+         len = 5;
          delay_ms(50);
          limpiar_palabra();
          fprintf(TTL, "[C] La palabra que se mostrara en el propeller es: \r\n");
@@ -182,7 +185,7 @@ Void Limpiar_palabra()
 
 Void Print()
 {
-   For(i=0; i<7; i++)
+   For(i=0; i<len; i++)
    {
       carac = wordreal[i];
       Switch(carac)
