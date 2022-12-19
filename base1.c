@@ -118,7 +118,7 @@ Void main()
          wordreal[2] = 'M';
          delay_ms(50);
          limpiar_palabra();
-         fprintf(TTL, "[1] La palabra que se mostrara en el propeller es: \r\n");
+         fprintf(TTL, "[A] La palabra que se mostrara en el propeller es: \r\n");
          for(int u=0;u<3;u++)
          {
             fprintf(TTL, "%c", wordreal[u]);
@@ -139,7 +139,7 @@ Void main()
          wordreal[5] = 'L';
          delay_ms(50);
          limpiar_palabra();
-         fprintf(TTL, "[1] La palabra que se mostrara en el propeller es: \r\n");
+         fprintf(TTL, "[B] La palabra que se mostrara en el propeller es: \r\n");
          for(int u=0;u<6;u++)
          {
             fprintf(TTL, "%c", wordreal[u]);
@@ -159,7 +159,7 @@ Void main()
          wordreal[4] = 'V';
          delay_ms(50);
          limpiar_palabra();
-         fprintf(TTL, "[1] La palabra que se mostrara en el propeller es: \r\n");
+         fprintf(TTL, "[C] La palabra que se mostrara en el propeller es: \r\n");
          for(int u=0;u<5;u++)
          {
             fprintf(TTL, "%c", wordreal[u]);
@@ -189,6 +189,7 @@ Void Print()
       {
          Case 'A': Case 'a':
          {
+            fprintf(TTL, "[A] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_A[j];
@@ -199,6 +200,7 @@ Void Print()
          }
          Case 'B': Case 'b':
          {
+            fprintf(TTL, "[B] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_B[j];
@@ -208,6 +210,7 @@ Void Print()
          }
          Case 'C': Case 'c':
          {
+            fprintf(TTL, "[C] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_C[j];
@@ -217,6 +220,7 @@ Void Print()
          }
          Case 'D': Case 'd':
          {
+            fprintf(TTL, "[D] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_D[j];
@@ -226,6 +230,7 @@ Void Print()
          }
          Case 'E': Case 'e':
          {
+            fprintf(TTL, "[E] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_E[j];
@@ -235,6 +240,7 @@ Void Print()
          }
          Case 'F': Case 'f':
          {
+            fprintf(TTL, "[F] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_F[j];
@@ -244,6 +250,7 @@ Void Print()
          }
          Case 'G': Case 'g':
          {
+            fprintf(TTL, "[G] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_G[j];
@@ -253,6 +260,7 @@ Void Print()
          }
          Case 'H': Case 'h':
          {
+            fprintf(TTL, "[H] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_H[j];
@@ -262,6 +270,7 @@ Void Print()
          }
          Case 'I': Case 'i':
          {
+            fprintf(TTL, "[I] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_I[j];
@@ -271,6 +280,7 @@ Void Print()
          }
          Case 'J': Case 'j':
          {
+            fprintf(TTL, "[J] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_J[j];
@@ -280,6 +290,7 @@ Void Print()
          }
          Case 'K': Case 'k':
          {
+            fprintf(TTL, "[K] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_K[j];
@@ -289,6 +300,7 @@ Void Print()
          }
          Case 'L': Case 'l':
          {
+            fprintf(TTL, "[L] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_L[j];
@@ -298,6 +310,7 @@ Void Print()
          }
          Case 'M': Case 'm':
          {
+            fprintf(TTL, "[M] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_M[j];
@@ -308,6 +321,7 @@ Void Print()
          }
          Case 'N': Case 'n':
          {
+            fprintf(TTL, "[N] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_N[j];
@@ -317,6 +331,7 @@ Void Print()
          }
          Case 'O': Case 'o':
          {
+            fprintf(TTL, "[O] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_O[j];
@@ -326,6 +341,7 @@ Void Print()
          }
          Case 'P': Case 'p':
          {
+            fprintf(TTL, "[P] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_P[j];
@@ -335,6 +351,7 @@ Void Print()
          }
          Case 'Q': Case 'q':
          {
+            fprintf(TTL, "[Q] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_Q[j];
@@ -344,6 +361,7 @@ Void Print()
          }
          Case 'R': Case 'r':
          {
+            fprintf(TTL, "[R] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_R[j];
@@ -353,6 +371,7 @@ Void Print()
          }
          Case 'S': Case 's':
          {
+            fprintf(TTL, "[S] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_S[j];
@@ -362,6 +381,7 @@ Void Print()
          }
          Case 'T': Case 't':
          {
+            fprintf(TTL, "[T] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_T[j];
@@ -371,6 +391,7 @@ Void Print()
          }
          Case 'U': Case 'u':
          {
+            fprintf(TTL, "[U] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_U[j];
@@ -381,6 +402,7 @@ Void Print()
          }
          Case 'V': Case 'v':
          {
+            fprintf(TTL, "[V] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_V[j];
@@ -390,6 +412,7 @@ Void Print()
          }
          Case 'W': Case 'w':
          {
+            fprintf(TTL, "[W] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_W[j];
@@ -399,6 +422,7 @@ Void Print()
          }
          Case 'X': Case 'x':
          {
+            fprintf(TTL, "[X] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_X[j];
@@ -408,6 +432,7 @@ Void Print()
          }
          Case 'Y': Case 'y':
          {
+            fprintf(TTL, "[Y] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_Y[j];
@@ -417,6 +442,7 @@ Void Print()
          }
          Case 'Z': Case 'z':
          {
+            fprintf(TTL, "[Z] \r\n");
             for(j=0;j<7;j++)
             {
                PORTD = Letra_Z[j];
