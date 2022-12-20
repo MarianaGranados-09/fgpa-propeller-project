@@ -25,7 +25,7 @@ Signal Data1 : std_logic_vector(7 downto 0) := "01000001" ; -- Ascii 'A' : Hex 6
 Signal Data2 : std_logic_vector(7 downto 0) := "01000010" ; -- Ascii 'B' : Hex 66
 Signal Data3 : std_logic_vector(7 downto 0) := "01000011" ; -- Ascii 'C' : Hex 67  
 
-signal parity : std_logic:='0';
+signal parity : std_logic:='1';
 signal stop : std_logic:='1';
 begin																		   
 	
