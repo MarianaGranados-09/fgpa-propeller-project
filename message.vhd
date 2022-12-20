@@ -21,9 +21,9 @@ signal Tx_s	: std_logic:='1';
 
 signal start : std_logic:='0';
 
-Signal Data1 : std_logic_vector(7 downto 0) := "00110001" ; -- Ascii '1' : Hex 49 
-Signal Data2 : std_logic_vector(7 downto 0) := "00110010" ; -- Ascii '2' : Hex 50
-Signal Data3 : std_logic_vector(7 downto 0) := "00110011" ; -- Ascii '3' : Hex 51  
+Signal Data1 : std_logic_vector(7 downto 0) := "01000001" ; -- Ascii 'A' : Hex 65 
+Signal Data2 : std_logic_vector(7 downto 0) := "01000010" ; -- Ascii 'B' : Hex 66
+Signal Data3 : std_logic_vector(7 downto 0) := "01000011" ; -- Ascii 'C' : Hex 67  
 
 signal parity : std_logic:='0';
 signal stop : std_logic:='1';
@@ -34,7 +34,7 @@ begin
 	
 	secuencial: process	(Qp) is
 	begin 
-		--sw1 enviar 1
+		--sw1 enviar A
 		If (BT1 = '1' and SND = '1') then
 		case Qp is
 			when "000000"	=> 
@@ -99,7 +99,7 @@ begin
 		end case;
 		end if;
 		
-		--sw2 enviar 2
+		--sw2 enviar B
 		If (BT2 = '1' and SND = '1') then
 		case Qp is
 			when "000000"	=> 
@@ -164,7 +164,7 @@ begin
 		end case;
 		end if;
 		
-		--sw3 enviar 3
+		--sw3 enviar C
 		If (BT3 = '1' and SND = '1') then
 		case Qp is
 			when "000000"	=> 
