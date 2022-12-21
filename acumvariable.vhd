@@ -30,7 +30,7 @@ Signal Data2 : Std_logic_vector(7 downto 0) := "01000010"; -- Ascii 'B' : HEX 42
 Signal Data3 : Std_logic_vector(7 downto 0) := "01000011"; -- Ascii 'C' : HEX 43. 
 signal Tx_s	: std_logic:='1';
 signal start : std_logic:='0';
-signal parity : std_logic:='0';
+signal parity : std_logic:='1';
 signal stop : std_logic:='1';
 begin
 
