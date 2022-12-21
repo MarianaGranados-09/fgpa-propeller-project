@@ -24,12 +24,12 @@ end entity DataOut;
 
 architecture simple of DataOut is
 signal Qp, Qn : std_logic_vector(5 downto 0) := (others => '0');
-Signal Data1 : Std_logic_vector(7 downto 0) := "01000001"; -- Ascii 'A' : HEX 41.
-Signal Data2 : Std_logic_vector(7 downto 0) := "01000010"; -- Ascii 'B' : HEX 42. 
-Signal Data3 : Std_logic_vector(7 downto 0) := "01000011"; -- Ascii 'C' : HEX 43. 
+Signal Data1 : Std_logic_vector(7 downto 0) := "01000001"; -- Ascii 'A' : HEX 65.
+Signal Data2 : Std_logic_vector(7 downto 0) := "01000010"; -- Ascii 'B' : HEX 66. 
+Signal Data3 : Std_logic_vector(7 downto 0) := "01000011"; -- Ascii 'C' : HEX 67. 
 signal Tx_s	: std_logic:='1';
 signal start : std_logic:='0';
-signal parity : std_logic:='0';
+signal parity : std_logic:='1';
 signal stop : std_logic:='1';
 begin
 
