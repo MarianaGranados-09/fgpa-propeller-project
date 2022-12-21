@@ -91,7 +91,7 @@ begin
 				Tx_s <= stop;
 				Qn <= Qp + 1;  
 				
-			-- Se termina de mandar 1.	
+			-- Se termina de mandar A.	
 			
 			
 			when "001100"	=>	-- Clear Display.
@@ -280,7 +280,7 @@ begin
 				Tx_s <= stop;
 				Qn <= Qp + 1;  
 				
-			-- Se termina de mandar '2'.	
+			-- Se termina de mandar 'B'.	
 			
 			
 			when "001100"	=>	-- Clear Display.
@@ -469,7 +469,7 @@ begin
 				Tx_s <= stop;
 				Qn <= Qp + 1;  
 				
-			-- Se termina de mandar '3'.	
+			-- Se termina de mandar 'C'.	
 			
 			
 			when "001100"	=>	-- Clear Display.
