@@ -6,11 +6,11 @@ use IEEE.STD_LOGIC_ARITH.all;
 
 entity BaseDeTiempo is		
 	generic(			
-			K: integer:= 50000000;	--	pulsos para contar 1 segundo en 50MHz.
-			N: integer:=27		--	13 bits
+			K: integer:=5209;	--	pulsos para 9600 con 50 MHz 5209
+			N: integer:=13		--	13 bist
  	 	    );
 	 port(
-		 CLK : in STD_LOGIC;	--	Reloj de la FPGA.
+		 CLK : in STD_LOGIC;	--	Reloj maestro
 		 RST : in STD_LOGIC;	--	Reset maestro
 		 H   : in STD_LOGIC;	--	Senal de habilitaci�n de la base de tiempo
 		 BT  : out STD_LOGIC	--	Base de tiempo
@@ -44,9 +44,7 @@ begin
 		else
 			BdT <= '0';
 		end if;
-	end process Comparador;
-	
-	
+	end process Comparador;	
 	
 	combinacional: process(CLK, RST) is		--	Registro
 	begin		   
