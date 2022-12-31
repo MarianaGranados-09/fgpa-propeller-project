@@ -5,6 +5,7 @@ ENTITY lcd_example IS
   PORT(
   	  H 		: IN STD_logic;
       RST 		: IN STD_logic;
+	  MOTOR		: OUT STD_logic;
   	  SW1 		: IN STD_logic;
   	  SW2 		: IN STD_logic;
 	  SW3		: IN STD_logic;
@@ -54,6 +55,7 @@ BEGIN
 	
     IF(clk'EVENT AND clk = '1') THEN
 		if(SW1='0' AND SW2='0' AND SW3='0' AND SW4='0' AND SEND='1') then
+				  MOTOR <= '0';
 			      IF(lcd_busy = '0' AND lcd_enable = '0') THEN
 			        lcd_enable <= '1';
 			        IF(char < 17) THEN
@@ -87,6 +89,7 @@ BEGIN
     		END IF;
 			
 			if(SW1='1' AND SW2='0' AND SW3='0' AND SEND='0') then --COM
+				
 			      IF(lcd_busy = '0' AND lcd_enable = '0') THEN
 			        lcd_enable <= '1';
 			        IF(char < 32) THEN
@@ -228,6 +231,7 @@ BEGIN
     		END IF;
 			
 			if(SW2='0' AND SW3='0' AND SW1= '0' AND SW4='1' AND SEND='0') then
+				  MOTOR <= '1';
 			      IF(lcd_busy = '0' AND lcd_enable = '0') THEN
 			        lcd_enable <= '1';
 			        IF(char < 17) THEN
