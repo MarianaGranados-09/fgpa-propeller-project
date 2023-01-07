@@ -110,12 +110,12 @@ BEGIN
         --send instruction to lcd        
         WHEN send =>
           busy <= '1';
-          IF(clk_count < (50 * clk_freq)) THEN       --do not exit for 50us
+          IF(clk_count < (50000 * clk_freq)) THEN       --do not exit for 50us
             IF(clk_count < clk_freq) THEN              --negative enable
               e <= '0';
-            ELSIF(clk_count < (14 * clk_freq)) THEN    --positive enable half-cycle
+            ELSIF(clk_count < (14000 * clk_freq)) THEN    --positive enable half-cycle
               e <= '1';
-            ELSIF(clk_count < (27 * clk_freq)) THEN    --negative enable half-cycle
+            ELSIF(clk_count < (27000 * clk_freq)) THEN    --negative enable half-cycle
               e <= '0';
             END IF;
             clk_count := clk_count + 1;
